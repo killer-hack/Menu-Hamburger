@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Hamburger Candy</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #e6f7ff);
+      color: #663366;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 35px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 5px;
+      margin: 6px 0;
+      background-color: #ff66cc;
+      transition: 0.4s;
+      box-shadow: 0 0 8px #ff99cc;
+      border-radius: 3px;
+    }
+
+    #menu-checkbox {
+      display: none;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 260px;
+      height: 100%;
+      background: linear-gradient(to bottom, #ffccff, #ccffff);
+      padding-top: 80px;
+      transition: left 0.3s ease;
+      box-shadow: 5px 0 15px rgba(255, 153, 204, 0.5);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px dashed #ff99cc;
+    }
+
+    nav ul li a {
+      color: #663366;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff66cc;
+    }
+
+    #menu-checkbox:checked ~ nav {
+      left: 0;
+    }
+
+    #menu-checkbox:checked + .menu-toggle span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    #menu-checkbox:checked + .menu-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #menu-checkbox:checked + .menu-toggle span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 36px;
+      color: #ff66cc;
+      text-shadow: 0 0 10px #ff99cc;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="checkbox" id="menu-checkbox">
+  <label for="menu-checkbox" class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav>
+    <ul>
+      <li><a href="#">Bonbons</a></li>
+      <li><a href="#">Sucettes</a></li>
+      <li><a href="#">Gâteaux</a></li>
+      <li><a href="#">Glaces</a></li>
+    </ul>
+  </nav>
+
+  <h1>Bienvenue au pays des douceurs</h1>
+
+</body>
+</html>

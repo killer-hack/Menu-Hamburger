@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Hamburger Vert</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 4px;
+      margin: 5px 0;
+      background-color: green;
+      transition: 0.4s;
+    }
+
+    #menu-checkbox {
+      display: none;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: green;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    #menu-checkbox:checked ~ nav {
+      left: 0;
+    }
+
+    #menu-checkbox:checked + .menu-toggle span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #menu-checkbox:checked + .menu-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #menu-checkbox:checked + .menu-toggle span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  </style>
+</head>
+<body>
+
+  <input type="checkbox" id="menu-checkbox">
+  <label for="menu-checkbox" class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">À propos</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Hamburger Futuriste</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at center, #0f0f0f, #000000);
+      color: #00ffff;
+      overflow-x: hidden;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 35px;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 4px;
+      margin: 7px 0;
+      background-color: #00ffff;
+      transition: 0.4s;
+      box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      border-radius: 2px;
+    }
+
+    #menu-checkbox {
+      display: none;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px;
+      height: 100%;
+      background: linear-gradient(to bottom, #001f1f, #003333);
+      padding-top: 100px;
+      transition: left 0.4s ease;
+      box-shadow: 5px 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      padding: 25px;
+      text-align: center;
+      border-bottom: 1px solid #00ffff;
+    }
+
+    nav ul li a {
+      color: #00ffff;
+      text-decoration: none;
+      font-size: 22px;
+      letter-spacing: 2px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+
+    #menu-checkbox:checked ~ nav {
+      left: 0;
+    }
+
+    #menu-checkbox:checked + .menu-toggle span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    #menu-checkbox:checked + .menu-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #menu-checkbox:checked + .menu-toggle span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 120px;
+      font-size: 40px;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+  </style>
+</head>
+<body>
+
+  <input type="checkbox" id="menu-checkbox">
+  <label for="menu-checkbox" class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav>
+    <ul>
+      <li><a href="#">Interface</a></li>
+      <li><a href="#">Modules</a></li>
+      <li><a href="#">Systèmes</a></li>
+      <li><a href="#">Déconnexion</a></li>
+    </ul>
+  </nav>
+
+  <h1>Bienvenue dans le Nexus</h1>
+
+</body>
+</html>
